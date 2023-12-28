@@ -1,0 +1,34 @@
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.button-link {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    font-size: unset;
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+.highlight {
+    background-color: aqua;
+}
+
+a {
+    color: rgb(0, 0, 238);
+    font-family: arial, sans-serif;
+}
