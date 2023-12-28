@@ -1,4 +1,5 @@
 #!/bin/zsh
 
-rsync target/finances-0.0.1-SNAPSHOT.jar aaron@finances.homelab.io:/home/aaron/finances.jar
-#ssh aaron@192.168.0.27 'java -jar finances.jar'
+mvn clean package
+rsync -avz ./target/finances-0.0.1.jar aaron@finances.homelab.io:~/finances-0.0.1.jar
+ssh aaron@finances.homelab.io "sudo systemctl restart finances.service"
