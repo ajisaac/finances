@@ -7,26 +7,19 @@ public class MintTransaction {
 	// "Date","Description","Original Description","Amount","Transaction Type","Category","Account Name","Labels","Notes"
 	private static final DateTimeFormatter mintTransactionFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
 	LocalDate date;
-	String description, originalDescription, amount, transactionType, category, accountName, labels, notes;
+	String description, originalDescription, transactionType, category, accountName;
+	Double amount;
 
-	public MintTransaction(String line) {
-		String[] fields = line.split(",");
+	public MintTransaction(String[] line) {
 
-		String d = fields[0].replaceAll("\"", "");
+		// "Date","Description","Original Description","Amount","Transaction Type","Category","Account Name","Labels","Notes"
+		String d = line[0].replaceAll("\"", "");
 		this.date = LocalDate.parse(d, mintTransactionFormatter);
-		this.description = fields[1];
-		this.originalDescription = fields[2];
-		this.amount = fields[3];
-		this.transactionType = fields[4];
-		this.category = fields[5];
-		this.accountName = fields[6];
-		this.labels = fields[7];
-		this.notes = fields[8];
-	}
-
-	public String toString() {
-//		return String.format("%s\t %s\t %s\t %s\t %s\t %s\t %s\t %s ", date, transactionType, category, accountName, description, amount, labels, notes);
-//		return date.toString();
-		return transactionType;
+		this.description = line[1];
+		this.originalDescription = line[2];
+		this.amount = Double.parseDouble(line[3]);
+		this.transactionType = line[4];
+		this.category = line[5];
+		this.accountName = line[6];
 	}
 }
