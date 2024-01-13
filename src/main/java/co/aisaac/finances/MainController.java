@@ -10,4 +10,9 @@ public class MainController {
   public String homepage() {
     return "index";
   }
+
+  @GetMapping("/notes")
+  public String notes(){
+    return "notes";
+  }
 }
