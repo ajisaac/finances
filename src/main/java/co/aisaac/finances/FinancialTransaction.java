@@ -1,4 +1,4 @@
-package co.aisaac.finances.utils;
+package co.aisaac.finances;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

@@ -1,4 +1,4 @@
-package co.aisaac.finances.utils;
+package co.aisaac.finances.utils.importers;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -21,5 +21,11 @@ public class MintTransaction {
 		this.transactionType = line[4];
 		this.category = line[5];
 		this.accountName = line[6];
+	}
+
+	@Override
+	public String toString() {
+		return date.toString() + ", " + description + ", " + originalDescription + ", " + amount + ", " + transactionType + ", " + category + ", " + accountName;
+
 	}
 }
