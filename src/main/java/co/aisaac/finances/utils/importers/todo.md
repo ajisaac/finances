@@ -1,0 +1,13 @@
+- We can list all transactions, group by day, month, year
+- Sum expenses by day, month, year
+- Need to gather up a list of features we want in ours
+- Want to add and remove categories
+- Better parsing on the input, want more validation of assumptions about code
+- Find the consolidated format that all transactions can use
+- Add the amazon parsing and matching to transactions
+- Assist us with categorizing older transactions
+- Start adding visualizations framework
+- Destroy intuit account 
+- Handle the concept of pending transactions and settled
+- Deal with transfers between accounts
+- Want to apply transaction categorization rules
