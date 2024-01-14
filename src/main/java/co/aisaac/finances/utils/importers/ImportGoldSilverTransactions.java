@@ -12,18 +12,14 @@ import java.util.List;
 
 public class ImportGoldSilverTransactions {
 
-	public static void main(String[] args) throws IOException, CsvException {
+	final private String path;
 
-//		File file = new File("data/silver1.csv");
-//		List<GoldSilverTransaction> silverTransactions = parseTransactions(file);
-//		silverTransactions.forEach(System.out::println);
-//
-		File file = new File("data/gold.csv");
-		List<GoldSilverTransaction> goldTransactions = parseTransactions(file);
-		goldTransactions.forEach(System.out::println);
+	public ImportGoldSilverTransactions(String path) {
+		this.path = path;
 	}
 
-	private static List<GoldSilverTransaction> parseTransactions(File file) throws IOException, CsvException {
+	public List<GoldSilverTransaction> run() throws IOException, CsvException {
+		File file = new File(path);
 		List<GoldSilverTransaction> transactions = new ArrayList<>();
 		try (Reader reader = Files.newBufferedReader(file.toPath());
 			 CSVReader csv = new CSVReader(reader)) {

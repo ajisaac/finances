@@ -12,15 +12,14 @@ import java.util.List;
 
 public class ImportCreditCardTransactions {
 
-	public static void main(String[] args) throws IOException, CsvException {
+	final private String path;
 
-		List<CreditCardTransaction> transactions = parseTransactions();
-		transactions.forEach(System.out::println);
-
+	public ImportCreditCardTransactions(String path) {
+		this.path = path;
 	}
 
-	private static List<CreditCardTransaction> parseTransactions() throws IOException, CsvException {
-		File file = new File("data/credit_card.csv");
+	public List<CreditCardTransaction> run() throws IOException, CsvException {
+		File file = new File(path);
 		List<CreditCardTransaction> transactions = new ArrayList<>();
 		try (Reader reader = Files.newBufferedReader(file.toPath());
 			 CSVReader csv = new CSVReader(reader)) {

@@ -1,8 +1,11 @@
 package co.aisaac.finances.utils.importers;
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+@Getter
 public class GoldSilverTransaction {
 
 	// Run Date, Action, Symbol, Security Description, Security Type, Quantity,Price ($),Commission ($),Fees ($),Accrued Interest ($),Amount ($),Settlement Date

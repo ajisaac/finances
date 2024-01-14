@@ -12,15 +12,14 @@ import java.util.List;
 
 public class ImportMintTransactions {
 
-	public static void main(String[] args) throws IOException, CsvException {
+	final private String path;
 
-		List<MintTransaction> transactions = parseTransactions();
-		transactions.forEach(System.out::println);
-
+	public ImportMintTransactions(String path) {
+		this.path = path;
 	}
 
-	private static List<MintTransaction> parseTransactions() throws IOException, CsvException {
-		File file = new File("data/transactions.csv");
+	public List<MintTransaction> run() throws IOException, CsvException {
+		File file = new File(path);
 		List<MintTransaction> transactions = new ArrayList<>();
 		try (Reader reader = Files.newBufferedReader(file.toPath());
 			 CSVReader csv = new CSVReader(reader)) {

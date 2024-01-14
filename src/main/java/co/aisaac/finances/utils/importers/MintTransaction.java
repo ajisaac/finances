@@ -1,8 +1,11 @@
 package co.aisaac.finances.utils.importers;
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+@Getter
 public class MintTransaction {
 	private static final DateTimeFormatter mintTransactionFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
 	LocalDate date;

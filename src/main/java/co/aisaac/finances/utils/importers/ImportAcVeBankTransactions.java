@@ -12,23 +12,14 @@ import java.util.List;
 
 public class ImportAcVeBankTransactions {
 
-	public static void main(String[] args) throws IOException, CsvException {
+	final private String path;
 
-		File file = new File("data/a_bank.csv");
-		List<AcVeTransaction> transactions = parseTransactions(file);
-		transactions.forEach(System.out::println);
-
-		file = new File("data/a_bank_savings.csv");
-		transactions = parseTransactions(file);
-		transactions.forEach(System.out::println);
-
-		file = new File("data/v_bank.csv");
-		transactions = parseTransactions(file);
-		transactions.forEach(System.out::println);
-
+	public ImportAcVeBankTransactions(String path) {
+		this.path = path;
 	}
 
-	private static List<AcVeTransaction> parseTransactions(File file) throws IOException, CsvException {
+	public List<AcVeTransaction> run() throws IOException, CsvException {
+		File file = new File(path);
 		List<AcVeTransaction> transactions = new ArrayList<>();
 		try (Reader reader = Files.newBufferedReader(file.toPath());
 			 CSVReader csv = new CSVReader(reader)) {
