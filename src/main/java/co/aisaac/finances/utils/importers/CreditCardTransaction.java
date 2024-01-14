@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class CreditCardTransaction {
 
-	private static final DateTimeFormatter mintTransactionFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	LocalDate date;
 	String transaction, name, memo;
 	Double amount;
@@ -15,7 +15,7 @@ public class CreditCardTransaction {
 		// "Date","Transaction","Name","Memo","Amount"
 		// memo = "number", "merchant", null, null, null
 		String d = line[0];
-		this.date = LocalDate.parse(d, mintTransactionFormatter);
+		this.date = LocalDate.parse(d, dateTimeFormatter);
 		this.transaction= line[1];
 		this.name = line[2];
 		this.memo = line[3];

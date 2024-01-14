@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class MintTransaction {
-	// "Date","Description","Original Description","Amount","Transaction Type","Category","Account Name","Labels","Notes"
 	private static final DateTimeFormatter mintTransactionFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
 	LocalDate date;
 	String description, originalDescription, transactionType, category, accountName;

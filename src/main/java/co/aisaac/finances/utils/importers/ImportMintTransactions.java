@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImportMintTransactions {
+
 	public static void main(String[] args) throws IOException, CsvException {
 
 		List<MintTransaction> transactions = parseTransactions();
