@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 @Getter
 public class AcVeTransaction {
 
-	private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
 	LocalDate date;
 	String accountNumber;
 	String postDate;
@@ -30,6 +30,7 @@ public class AcVeTransaction {
 		this.credit = line[5];
 		this.status = line[6];
 		this.balance = line[7];
+		this.date = LocalDate.parse(postDate, dateTimeFormatter);
 
 	}
 
