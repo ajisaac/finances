@@ -1,4 +1,4 @@
-package co.aisaac.finances.utils.importers;
+package co.aisaac.finances.imports;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;

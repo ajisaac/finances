@@ -1,4 +1,4 @@
-package co.aisaac.finances.utils.importers;
+package co.aisaac.finances.imports;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
@@ -10,26 +10,25 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImportCreditCardTransactions {
+public class ImportGoldSilverTransactions {
 
 	final private String path;
 
-	public ImportCreditCardTransactions(String path) {
+	public ImportGoldSilverTransactions(String path) {
 		this.path = path;
 	}
 
-	public List<CreditCardTransaction> run() throws IOException, CsvException {
+	public List<GoldSilverTransaction> run() throws IOException, CsvException {
 		File file = new File(path);
-		List<CreditCardTransaction> transactions = new ArrayList<>();
+		List<GoldSilverTransaction> transactions = new ArrayList<>();
 		try (Reader reader = Files.newBufferedReader(file.toPath());
 			 CSVReader csv = new CSVReader(reader)) {
 			csv.skip(1);
 			List<String[]> lines = csv.readAll();
 			for (String[] line : lines) {
-				transactions.add(new CreditCardTransaction(line));
+				transactions.add(new GoldSilverTransaction(line));
 			}
 		}
 		return transactions;
 	}
 }
-
