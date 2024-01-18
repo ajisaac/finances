@@ -1,4 +1,4 @@
-package co.aisaac.finances;
+package co.aisaac.finances.transactions;
 
 import jakarta.persistence.*;
 import lombok.Getter;

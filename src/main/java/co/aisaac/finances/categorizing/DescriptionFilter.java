@@ -1,4 +1,4 @@
-package co.aisaac.finances;
+package co.aisaac.finances.categorizing;
 
 import java.util.ArrayList;
 import java.util.List;
