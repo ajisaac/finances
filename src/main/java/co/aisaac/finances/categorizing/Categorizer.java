@@ -1,37 +1,32 @@
 package co.aisaac.finances.categorizing;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * If a String matches the categorizer, then it is categorized.
  */
+@Getter
+@Setter
+@Entity
 public class Categorizer {
 
-	private List<String> phrases = new ArrayList<>();
+	@Id
+	@GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+	private Long id;
+
+	@Column(name = "phrase")
+	private String phrase;
+
+	@Column(name = "category")
 	private String category;
 
-	public Categorizer(String category) {
-		this.category = category;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void addPhrase(String phrase) {
-		this.phrases.add(phrase.toUpperCase(Locale.ROOT));
-	}
-
 	public boolean matches(String description) {
-		String upper = description.toUpperCase();
-		for (String phrase : phrases) {
-			if (!upper.contains(phrase)) {
-				return false;
-			}
-		}
-		return true;
+		return description.toUpperCase().contains(phrase.toUpperCase());
 	}
 
 }
