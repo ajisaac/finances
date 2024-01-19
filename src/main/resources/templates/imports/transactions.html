@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="fragments/header.html :: #head('Check transactions')"></div>
+<body>
+<div class="container">
+    <div th:replace="~{fragments/header.html :: #main-menu}"></div>
+    <div th:replace="~{imports/side-menu.html :: #side-menu}"></div>
+
+    <h1>Check transactions</h1>
+
+    Once file is imported into backend, backend finds any transactions it thinks it's already seen and shows you those
+    side by side.
+
+</div>
+</body>
+</html>

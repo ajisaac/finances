@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="fragments/header.html :: #head('Imports')"></div>
+<body>
+<div class="container">
+    <div th:replace="~{fragments/header.html :: #main-menu}"></div>
+    <div th:replace="~{imports/side-menu.html :: #side-menu}"></div>
+
+    <h1>Import</h1>
+
+    A file upload module, a drop down to select the file type, and a button to import the file.
+    Do checks on the file to see if it matches what we expect for transactions.
+    Then move us to the import page for these transactions.
+
+</div>
+</body>
+</html>

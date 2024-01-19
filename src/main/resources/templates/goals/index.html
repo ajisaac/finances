@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<div th:replace="fragments/header.html :: #head('Analytics')"></div>
+<div th:replace="fragments/header.html :: #head('Goals Menu')"></div>
 <body>
 <div class="container">
     <div th:replace="~{fragments/header.html :: #main-menu}"></div>
-    <div th:replace="~{analytics/side-menu.html :: #side-menu}"></div>
-    <h1>Analytics</h1>
+    <div th:replace="~{goals/side-menu.html :: #side-menu}"></div>
+
+    <h1>Goals</h1>
+
 </div>
 </body>
 </html>

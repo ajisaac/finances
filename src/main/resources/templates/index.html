@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finances</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-
+<div th:replace="fragments/header.html :: #head('Home')"></div>
 <body>
 <div class="container">
-    <nav>
-        <a th:href="@{/}">home</a> -
-        <a th:href="@{/minimalIndex}">mindex</a> -
-        <a th:href="@{/categories}">categories</a>
-        <hr>
-    </nav>
+    <div th:replace="~{fragments/header.html :: #main-menu}"></div>
+    <div th:replace="~{side-menu.html :: #side-menu}"></div>
 
     <h1>Finances</h1>
 
-    <h2>A Bank</h2>
+    <h2>Transactions</h2>
     <table>
         <tr>
             <th>AccountNumber</th>
@@ -42,157 +32,6 @@
         </tr>
     </table>
 
-    <h2>A Bank Savings</h2>
-    <table>
-        <tr>
-            <th>AccountNumber</th>
-            <th>PostDate</th>
-            <th>Check</th>
-            <th>Description</th>
-            <th>Debit</th>
-            <th>Credit</th>
-            <th>Status</th>
-            <th>Balance</th>
-        </tr>
-        <tr th:each="tx : ${abankSavingsTransactions}">
-            <td th:text="${tx.accountNumber}"></td>
-            <td th:text="${tx.postDate}"></td>
-            <td th:text="${tx.check}"></td>
-            <td th:text="${tx.description}"></td>
-            <td th:text="${tx.debit}"></td>
-            <td th:text="${tx.credit}"></td>
-            <td th:text="${tx.status}"></td>
-            <td th:text="${tx.balance}"></td>
-        </tr>
-    </table>
-
-    <h2>V Bank</h2>
-    <table>
-        <tr>
-            <th>AccountNumber</th>
-            <th>PostDate</th>
-            <th>Check</th>
-            <th>Description</th>
-            <th>Debit</th>
-            <th>Credit</th>
-            <th>Status</th>
-            <th>Balance</th>
-        </tr>
-        <tr th:each="tx : ${vbankTransactions}">
-            <td th:text="${tx.accountNumber}"></td>
-            <td th:text="${tx.postDate}"></td>
-            <td th:text="${tx.check}"></td>
-            <td th:text="${tx.description}"></td>
-            <td th:text="${tx.debit}"></td>
-            <td th:text="${tx.credit}"></td>
-            <td th:text="${tx.status}"></td>
-            <td th:text="${tx.balance}"></td>
-        </tr>
-    </table>
-
-    <h2>Credit Card</h2>
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Transaction</th>
-            <th>Name</th>
-            <th>Memo</th>
-            <th>Amount</th>
-        </tr>
-        <tr th:each="tx : ${creditCardTransactions}">
-            <td th:text="${tx.date}"></td>
-            <td th:text="${tx.transaction}"></td>
-            <td th:text="${tx.name}"></td>
-            <td th:text="${tx.memo}"></td>
-            <td th:text="${tx.amount}"></td>
-        </tr>
-    </table>
-
-    <h2>Gold</h2>
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Settlement Date</th>
-            <th>Transaction</th>
-            <th>Symbol</th>
-            <th>Security Description</th>
-            <th>Security Type</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Commission</th>
-            <th>Fees</th>
-            <th>Accrued Interest</th>
-            <th>Amount</th>
-        </tr>
-        <tr th:each="tx : ${goldTransactions}">
-            <td th:text="${tx.date}"></td>
-            <td th:text="${tx.settlementDate}"></td>
-            <td th:text="${tx.transaction}"></td>
-            <td th:text="${tx.symbol}"></td>
-            <td th:text="${tx.securityDescription}"></td>
-            <td th:text="${tx.securityType}"></td>
-            <td th:text="${tx.quantity}"></td>
-            <td th:text="${tx.price}"></td>
-            <td th:text="${tx.commission}"></td>
-            <td th:text="${tx.fees}"></td>
-            <td th:text="${tx.accruedInterest}"></td>
-            <td th:text="${tx.amount}"></td>
-        </tr>
-    </table>
-
-    <h2>Silver</h2>
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Settlement Date</th>
-            <th>Transaction</th>
-            <th>Symbol</th>
-            <th>Security Description</th>
-            <th>Security Type</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Commission</th>
-            <th>Fees</th>
-            <th>Accrued Interest</th>
-            <th>Amount</th>
-        </tr>
-        <tr th:each="tx : ${silverTransactions}">
-            <td th:text="${tx.date}"></td>
-            <td th:text="${tx.settlementDate}"></td>
-            <td th:text="${tx.transaction}"></td>
-            <td th:text="${tx.symbol}"></td>
-            <td th:text="${tx.securityDescription}"></td>
-            <td th:text="${tx.securityType}"></td>
-            <td th:text="${tx.quantity}"></td>
-            <td th:text="${tx.price}"></td>
-            <td th:text="${tx.commission}"></td>
-            <td th:text="${tx.fees}"></td>
-            <td th:text="${tx.accruedInterest}"></td>
-            <td th:text="${tx.amount}"></td>
-        </tr>
-    </table>
-
-    <h2>Mint</h2>
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Original Description</th>
-            <th>Transaction Type</th>
-            <th>Category</th>
-            <th>Account Name</th>
-            <th>Amount</th>
-        </tr>
-        <tr th:each="tx : ${mintTransactions}">
-            <td th:text="${tx.date}"></td>
-            <td th:text="${tx.description}"></td>
-            <td th:text="${tx.originalDescription}"></td>
-            <td th:text="${tx.transactionType}"></td>
-            <td th:text="${tx.category}"></td>
-            <td th:text="${tx.accountName}"></td>
-            <td th:text="${tx.amount}"></td>
-        </tr>
-    </table>
 </div>
 </body>
 </html>

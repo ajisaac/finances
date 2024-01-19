@@ -8,7 +8,7 @@ public class AnalyticsController {
 
 	@GetMapping("/analytics")
 	public String analytics() {
-		return "analytics";
+		return "analytics/index";
 	}
 
 	/*
