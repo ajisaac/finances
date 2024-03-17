@@ -1,0 +1,17 @@
+{
+  "name": "finances",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node src/index.js",
+    "start": "node src/index.js",
+    "test": "echo \"No Tests\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
